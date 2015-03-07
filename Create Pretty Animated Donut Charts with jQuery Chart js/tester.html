@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery Pretty Doughtnut Examples</title>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.1/Chart.min.js"></script>
+  <script src="pretty-doughtnut.js"></script>
+<style>
+body {
+  margin: 0;
+}
+h1 { margin:150px auto 30px auto;}
+
+.margin {
+  margin-top: 5px;
+  margin-bottom: 1px;
+  margin-left: 20px;
+  margin-right: 20px;
+  
+}
+ 
+canvas {
+  z-index: 100;
+}
+
+.labelPercentage {
+  font-size: x-large;
+}
+ 
+.labelText {
+  font-size: small;
+  color: #CCCCCC;
+}
+ 
+.labelContainer {
+  display: block;
+  text-align: center;
+  width: 100px;
+  font-family: Helvetica;
+}
+</style>
+<script>
+$(window).load(function() {
+  doughnutWidget.options = {
+    container: $('#container'),
+    width: 100,
+    height: 100,
+    class: 'myClass',
+    cutout: 50
+  };
+
+  doughnutWidget.render(data());
+
+  setInterval(init, 2000);
+});
+
+function init() {
+  doughnutWidget.render(data());
+}
+
+function data() {
+    var data = {
+    pending: {
+      val: Math.round(Math.random() * 100),
+      color: '#57B4F2',
+      click: function(e) {
+        console.log('hi');
+      }
+    },
+    delivered: {
+      val: Math.round(Math.random() * 100),
+      color: '#6DED5C'
+    },
+    delayed: {
+      val: Math.round(Math.random() * 100),
+      color: '#E63329',
+      link: 'http://www.google.com'
+    }
+  };
+
+  return data;
+}
+</script>
+<link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div id="jquery-script-menu">
+<div class="jquery-script-center">
+<ul>
+<li><a href="http://www.jqueryscript.net/chart-graph/Create-Pretty-Animated-Donut-Charts-with-jQuery-Chart-js.html">Download This Plugin</a></li>
+<li><a href="http://www.jqueryscript.net/">Back To jQueryScript.Net</a></li>
+</ul>
+<div class="jquery-script-ads"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-2783044520727903";
+/* jQuery_demo */
+google_ad_slot = "2780937993";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div>
+<div class="jquery-script-clear"></div>
+</div>
+</div>
+<h1>jQuery Pretty Doughtnut Examples</h1>
+  <div id="container" class="margin" role="group"></div>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+</html>
