@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery FB Wall Plugin Demo</title>
+<link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="css/styles.css" />
+
+</head>
+<body>
+<div id="jquery-script-menu">
+<div class="jquery-script-center">
+<ul>
+<li><a href="http://www.jqueryscript.net/social-media/jQuery-Plugin-To-Display-Facebook-Fan-Page-Activity-Feed-FB-Wall.html">Download This Plugin</a></li>
+<li><a href="http://www.jqueryscript.net/">Back To jQueryScript.Net</a></li>
+</ul>
+<div class="jquery-script-ads"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-2783044520727903";
+/* jQuery_demo */
+google_ad_slot = "2780937993";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div>
+<div class="jquery-script-clear"></div>
+</div>
+</div>
+<h1 style="margin-top:150px;">jQuery FB Wall Plugin Demo</h1>
+<div id="page">
+
+    <div id="wall" class="facebookWall"></div>
+
+</div>
+
+<!-- jQuery templates. Not rendered by the browser. Notice the type attributes -->
+
+<script id="headingTpl" type="text/x-jquery-tmpl">
+<h1>${name}<span>on Facebook</span></h1>
+</script>
+
+<script id="feedTpl" type="text/x-jquery-tmpl">
+<li>
+    <img src="${from.picture}" class="avatar" />
+    
+    <div class="status">
+        <h2><a href="http://www.facebook.com/profile.php?id=${from.id}" target="_blank">${from.name}</a></h2>
+        <p class="message">{{html message}}</p>
+        {{if type == "link" }}
+            <div class="attachment">
+                {{if picture}}
+                    <img class="picture" src="${picture}" />
+                {{/if}}
+                <div class="attachment-data">
+                    <p class="name"><a href="${link}" target="_blank">${name}</a></p>
+                    <p class="caption">${caption}</p>
+                    <p class="description">${description}</p>
+                </div>
+            </div>
+        {{/if}}
+    </div>
+    
+    <p class="meta">${created_time} · 
+    {{if comments}}
+        ${comments.count} Comment{{if comments.count>1}}s{{/if}}
+    {{else}}
+        0 Comments
+    {{/if}} · 
+    {{if likes}}
+        ${likes.count} Like{{if likes.count>1}}s{{/if}}
+    {{else}}
+        0 Likes
+    {{/if}}
+    </p>
+    
+</li>
+</script>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="js/jquery.tmpl.min.js"></script>
+<script src="js/fbwall.js"></script>
+<script>
+$(document).ready(function(){
+
+	// Calling our plugin with a page id and an access token
+	// that you will need to generate as explained in the tutorial:
+	
+	$('#wall').facebookWall({
+		id:'jqueryscript',
+		access_token:'193673707489176|CSya6L7Q081Uw6OrFfI14AsmfSA'
+	});
+
+});
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+</html>
