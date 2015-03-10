@@ -1,0 +1,161 @@
+// dep: https://www.sharebutton.co/fonts/entypo.min.css
+// dep: https://fonts.googleapis.com/css?family=Lato:900 (if `text_font: true`)
+
+network($width, $center, $left, $middle-left)
+  width: $width
+
+  &.center
+    margin-left: $center
+
+  &.left
+    margin-left: $left
+
+  &.middle
+    &.left
+      margin-left: $middle-left
+
+  ul
+    width: $width
+
+{ config-selector }
+  size: 92px 20px
+
+  -webkit-touch-callout: none
+  -webkit-user-select: none
+  -khtml-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+
+  [class*='entypo-']:before
+    font-family: 'entypo', sans-serif;
+
+  label
+    font-size: 16px
+    cursor: pointer
+    margin: 0
+    padding: 5px 10px
+    border-radius: 5px
+    background: #a29baa
+    color: #333333
+    transition()
+
+    &:hover
+      opacity: .8
+
+    span
+      upcase()
+      font-size: .9em
+      font-family: Lato, sans-serif
+      font-weight: bold
+      -webkit-font-smoothing: antialiased
+      padding-left: 6px
+
+  .social
+    opacity: 0
+    transition: all .4s ease
+    margin-left: -15px
+    visibility: hidden
+
+    &.top
+      transform-origin: 0% 0%
+      margin-top: -80px
+
+    &.bottom
+      transform-origin: 0% 0%
+      margin-top: 5px
+
+    &.middle
+      margin-top: -34px
+
+      &.right
+        transform-origin: 5% 50%
+        margin-left: 105px
+
+      &.left
+        transform-origin: 5% 50%
+
+    &.right
+      margin-left: 14px
+
+    &.load
+      transition: none !important
+
+    ///////////////////////////////////////////////////
+    // Width & Margin based on # of networks enabled //
+    ///////////////////////////////////////////////////
+
+    &.networks-1
+      network(60px, 14px, 14px, -70px)
+    &.networks-2
+      network(120px, -13px, -44px, -130px)
+    &.networks-3
+      network(180px, -45px, -102px, -190px)
+    &.networks-4
+      network(240px, -75px, 162px, -250px)
+    &.networks-5
+      network(300px, -105px, -225px, -320px)
+
+    &.active
+      opacity: 1
+      transition: all .4s ease
+      visibility: visible
+
+      &.top
+        transform: scale(1) translateY(-10px)
+
+      &.bottom
+        transform: scale(1) translateY(15px)
+
+      &.middle
+        &.right
+          transform: scale(1) translateX(10px)
+
+        &.left
+          transform: scale(1) translateX(-10px)
+
+    ul
+      relative: left 0 right 0
+      height: 46px
+      color: #fff
+      margin: auto
+      padding: 0
+      list-style: none
+
+      li
+        font-size: 20px
+        cursor: pointer
+        width: 60px
+        margin: 0
+        padding: 12px 0
+        text-align: center
+        float: left
+        display: none
+        height: 22px
+        position: relative
+        z-index: 2
+        box-sizing: content-box
+        transition()
+
+        &:hover
+          color: rgba(0,0,0,.5)
+
+    li[class*='facebook']
+      background: #3B5998
+      display: unquote(config-networks-facebook-display)
+
+    li[class*='twitter']
+      background: #6CDFEA
+      display: unquote(config-networks-twitter-display)
+
+    li[class*='gplus']
+      background: #E34429
+      display: unquote(config-networks-google_plus-display)
+
+    li[class*='pinterest']
+      background: #C5282F
+      display: unquote(config-networks-pinterest-display)
+ 
+    li[class*='paper-plane']
+      background: #42C5B0
+      display: unquote(config-networks-email-display)
